@@ -1,7 +1,5 @@
 package com.example.stepdefinitions.hooks;
 
-import java.sql.DriverManager;
-
 import org.openqa.selenium.WebDriver;
 
 import com.example.driver.WebDriverFactory;
