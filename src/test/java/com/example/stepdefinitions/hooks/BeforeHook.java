@@ -15,10 +15,6 @@ public class BeforeHook {
 	@Before
 	public void initialize(Scenario scenario) {
 
-
-		System.out.println(WebDriverManager.getSession());
-		System.out.println(WebDriverManager.getBrowser());
-
 		if (WebDriverManager.getSession()==null) {
 			String browser = WebDriverManager.getBrowser();
 
