@@ -1,5 +1,7 @@
 ## QB Coding Exercise
 
+This is a maven project and can be imported into Eclipse/STS as an existing maven project
+
 Tested with firefox 38 and webdriver v 2.46.
 Tested with chrome 58 and webdriver v 2.46.
 
