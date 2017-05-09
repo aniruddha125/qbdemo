@@ -5,8 +5,14 @@ Tested with chrome 58 and webdriver v 2.46.
 
 Should be good to run on any webdriver version before version 3.x.
 
-Command to run on firefox:- mvn clean install
-command to run on chrome :- mvn clean install -DchromeDriver="/path/to/chrome/driver/chromedriver"
+- Command to run on firefox:- 
+``` 
+mvn clean install 
+```
+- Command to run on chrome :- 
+```
+mvn clean install -DchromeDriver="/path/to/chrome/driver/chromedriver"
+```
 
 By default chrome tests are enabled in "TestNGRunTests.xml".
 Just enable the firefox tests to run it in firefox.
