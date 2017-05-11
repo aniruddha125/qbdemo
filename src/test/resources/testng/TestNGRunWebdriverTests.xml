@@ -4,16 +4,16 @@
 	<listeners>
 		<listener class-name="com.example.listeners.WebDriverTestNGListener"></listener>
 	</listeners>
-	 <test name="WebServices Tests with firefox">
+	 <!-- <test name="WebServices Tests with firefox">
        <parameter name="browserName" value="firefox" />
         <classes>
             <class name="com.example.runners.RunCukesTestFirefox" />
         </classes>
-    </test>
-    <!-- <test name="WebServices Tests with chrome">
+    </test> -->
+    <test name="WebServices Tests with chrome">
        <parameter name="browserName" value="chrome" />
         <classes>
             <class name="com.example.runners.RunCukesTestChrome" />
         </classes>
-    </test> -->
+    </test>
 </suite>
