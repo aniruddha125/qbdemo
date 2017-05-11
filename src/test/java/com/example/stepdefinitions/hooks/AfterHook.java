@@ -11,7 +11,7 @@ import cucumber.api.java.After;
 
 public class AfterHook {
 
-	@After
+	@After(value="@selenium")
 	public void teardown(Scenario scenario) {
 
 		if (scenario.isFailed()) {

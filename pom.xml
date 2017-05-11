@@ -19,23 +19,39 @@
 			<version>${org.seleniumhq.selenium.version}</version>
 		</dependency>
 		<dependency>
-                <groupId>info.cukes</groupId>
-                <artifactId>cucumber-java</artifactId>
-                <version>${info.cukes.cucumber.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${info.cukes.cucumber.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${info.cukes.cucumber.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${info.cukes.cucumber.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>api-tests</id>
+			<properties>
+			    <cucumber.options></cucumber.options>
+				<testNG.suiteXmlFile>src/test/resources/testng/TestNGRunAPITests.xml</testNG.suiteXmlFile>
+			</properties>
+		</profile>
+		<profile>
+			<id>ui-tests</id>
+			<properties>
+			    <cucumber.options></cucumber.options>
+				<testNG.suiteXmlFile>src/test/resources/testng/TestNGRunWebdriverTests.xml</testNG.suiteXmlFile>
+			</properties>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
@@ -48,23 +64,43 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
+				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/TestNGRunTests.xml</suiteXmlFile>
+						<suiteXmlFile>${testNG.suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
+					<reuseForks>false</reuseForks>
+					<argLine>-Duser.language=en</argLine>
+					<argLine>-Xmx1024m</argLine>
+					<argLine>-XX:MaxPermSize=256m</argLine>
+					<argLine>-Dfile.encoding=UTF-8</argLine>
+					<useFile>false</useFile>
+					<systemPropertyVariables>
+                        <cucumber.options>${cucumber.options}</cucumber.options>
+                    </systemPropertyVariables>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
 	<properties>
-        <maven-compiler-plugin.version>1.7</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
-        <org.testng.testng.version>6.9.10</org.testng.testng.version>
-        <org.seleniumhq.selenium.version>2.46.0</org.seleniumhq.selenium.version>
-        <info.cukes.cucumber.version>1.2.4</info.cukes.cucumber.version>
-        <chromeDriver></chromeDriver>
-    </properties>
+		<maven-compiler-plugin.version>1.7</maven-compiler-plugin.version>
+		<org.apache.maven.plugins.maven-surefire-plugin.version></org.apache.maven.plugins.maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+		<org.testng.testng.version>6.9.10</org.testng.testng.version>
+		<org.seleniumhq.selenium.version>2.46.0</org.seleniumhq.selenium.version>
+		<info.cukes.cucumber.version>1.2.4</info.cukes.cucumber.version>
+		<chromeDriver></chromeDriver>
+		<cucumber.options></cucumber.options>
+		<testNG.suiteXmlFile>src/test/resources/testng/TestNGRunWebdriverTests.xml</testNG.suiteXmlFile>
+	</properties>
 </project>

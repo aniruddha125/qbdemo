@@ -4,6 +4,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(glue = { "com/example/stepdefinitions" }, features = "src/test/resources/features", tags = {
-		"@selenium","~@Ignore" }, plugin = { "pretty", "html:target/html/firefox" })
-public class RunCukesTestFirefox extends AbstractTestNGCucumberTests {
+		"@api","~@Ignore" }, plugin = { "pretty", "html:target/html/api" })
+public class RunCukesAPI extends AbstractTestNGCucumberTests {
 }

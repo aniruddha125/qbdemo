@@ -10,7 +10,7 @@ import cucumber.api.java.Before;
 
 public class BeforeHook {
 
-	@Before
+	@Before(value="@selenium")
 	public void initialize(Scenario scenario) {
 
 		if (WebDriverManager.getSession()==null) {

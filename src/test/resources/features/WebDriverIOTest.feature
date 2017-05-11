@@ -1,3 +1,4 @@
+@selenium
 Feature: WebDriverIO test
 
   1. Navigate to WebDriverIO website
