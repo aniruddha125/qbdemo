@@ -12,12 +12,18 @@ Should be good to run on any webdriver version before version 3.x.
 mvn clean install 
 ```
 - Command to run on chrome :- 
+
 ```
 mvn clean install -DchromeDriver="/path/to/chrome/driver/chromedriver"
 ```
 
 By default chrome tests are enabled in "TestNGRunTests.xml".
 Just enable the firefox tests to run it in firefox.
+
+- Command to run api tests :- 
+```
+mvn clean install -Papi-tests
+```
 
 ## Assumptions
 - Test are not meant to be run on Selenium grid.
