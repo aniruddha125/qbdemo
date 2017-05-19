@@ -11,6 +11,8 @@ Should be good to run on any webdriver version before version 3.x.
 ``` 
 mvn clean install 
 ```
+Chrome test cases if enabled in the TestNG xml file will fail with this maven command.
+
 - Command to run on chrome :- 
 
 ```
