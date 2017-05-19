@@ -22,6 +22,11 @@ mvn clean install -DchromeDriver="/path/to/chrome/driver/chromedriver"
 By default chrome tests are enabled in "TestNGRunWebdriverTests.xml".
 Just enable the firefox tests to run it in firefox.
 
+- Command to run all webdriver tests:-
+```
+mvn clean install -Pui-tests
+```
+
 - Command to run api tests :- 
 ```
 mvn clean install -Papi-tests
