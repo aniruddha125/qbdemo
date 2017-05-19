@@ -7,6 +7,8 @@ Tested with chrome 58 and webdriver v 2.46.
 
 Should be good to run on any webdriver version before version 3.x.
 
+### Execution
+
 - Command to run on firefox:- 
 ``` 
 mvn clean install 
@@ -32,15 +34,15 @@ mvn clean install -Pui-tests -DchromeDriver="/path/to/chrome/driver/chromedriver
 mvn clean install -Papi-tests
 ```
 
-## Assumptions
+### Assumptions
 - Test are not meant to be run on Selenium grid.
 - RemoteWebDriver was not used and no reporting structure was setup.
 - Only browsers coded for were chrome and firefox. The structure should support an easy addition of other browsers.
 
-## Description of test
+### Description of test
 Tested the search functionality of webdriver.io/api link. In addition to "click" also tested for "submit" , "select" and "clear".
 
-## Language used
+### Language used
 tests were automated using cucumber-java.
 Feature file "WebDrivverIOTest.feature" for test is located at "src/test/resources/features"
 Glue code is at src/test/java/com/example/stepdefinitions.
