@@ -35,9 +35,11 @@ mvn clean install -Papi-tests
 ```
 
 ### Assumptions
-- Test are not meant to be run on Selenium grid.
-- RemoteWebDriver was not used and no reporting structure was setup.
-- Only browsers coded for were chrome and firefox. The structure should support an easy addition of other browsers.
+ #### UI Tests
+ - Test are not meant to be run on Selenium grid.
+ - RemoteWebDriver was not used and no reporting structure was setup.
+ - Only browsers coded for were chrome and firefox. The structure should support an easy addition of other browsers.
+ 
 
 ### Description of test
 Tested the search functionality of webdriver.io/api link. In addition to "click" also tested for "submit" , "select" and "clear".
